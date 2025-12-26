@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* MEM Global Advisory - Custom Theme */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Maroon palette */
+  --color-maroon-900: #4A1C2A;
+  --color-maroon-800: #5A2534;
+  --color-maroon-700: #6B2C3E;
+  --color-maroon-600: #7D3548;
+  --color-maroon-500: #8B3D52;
+  --color-maroon-400: #A4566B;
+  --color-maroon-300: #BD7084;
+  --color-maroon-200: #D6A3B0;
+  --color-maroon-100: #F5E6EA;
+  --color-maroon-50: #FBF5F7;
+
+  /* Cream palette */
+  --color-cream-50: #FDFBF7;
+  --color-cream-100: #FAF7F0;
+  --color-cream-200: #F5F0E6;
+  --color-cream-300: #EBE5D9;
+
+  /* Gold accent */
+  --color-gold-500: #B8860B;
+  --color-gold-400: #D4A017;
+  --color-gold-300: #E8BC2F;
+
+  /* Fonts - using CSS variables from Next.js font loader */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #FDFBF7;
+  --foreground: #4A1C2A;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #F5E6EA;
+  color: #4A1C2A;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #6B2C3E;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BD7084;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B3D52;
 }
