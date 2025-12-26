@@ -3,8 +3,9 @@
 ## Overview
 Professional immigration consultancy website for a Dubai-based firm serving clients migrating to Europe, Canada, UK, Australia, and New Zealand.
 
-**Live Preview:** `npm run dev` → http://localhost:3000
-**Production:** Deploy to Vercel
+**Live Site:** https://memglobaladvisory.vercel.app/
+**Local Dev:** `npm run dev` → http://localhost:3000
+**GitHub:** https://github.com/gayan415/memglobaladvisory
 
 ---
 
@@ -115,9 +116,17 @@ All site content is centralized in `lib/constants.ts`:
 
 ---
 
+## Deployment Status
+
+- **Vercel:** Connected to `gayan415/memglobaladvisory` (auto-deploys on push)
+- **Live URL:** https://memglobaladvisory.vercel.app/
+- **Status:** Production ready (pending contact details)
+
+---
+
 ## Immediate Next Steps
 
-### 1. Update Contact Details
+### 1. Update Contact Details (Required)
 Edit `lib/constants.ts`:
 ```typescript
 export const SITE_CONFIG = {
@@ -135,20 +144,16 @@ When logo is ready:
 - Add to `public/images/logo.svg`
 - Update `components/layout/Header.tsx` to use Image component
 
-### 3. Deploy to Vercel
-```bash
-# Option 1: CLI
-npm install -g vercel
-vercel
-
-# Option 2: GitHub integration
-# Push to GitHub, connect repo in Vercel dashboard
-```
-
-### 4. Set Up Domain
+### 3. Set Up Custom Domain
 - Purchase `memglobaladvisory.com` (Namecheap/Cloudflare ~$12/year)
-- Add domain in Vercel dashboard
+- In Vercel: Settings → Domains → Add domain
 - Update `SITE_CONFIG.url` in constants.ts
+
+### 4. Set Up Contact Form Backend
+Currently logs to console. Options:
+- **Resend** - Email API (free tier: 100 emails/day)
+- **SendGrid** - Email API
+- **Formspree** - No-code form backend
 
 ---
 
@@ -186,10 +191,12 @@ vercel
 # Development
 npm run dev           # Start dev server at localhost:3000
 
-# Build & Deploy
+# Build & Test Production Locally
 npm run build         # Production build
 npm run start         # Start production server
-vercel                # Deploy to Vercel
+
+# Deploy (auto-deploys on push to main)
+git add . && git commit -m "Description" && git push
 
 # Type checking
 npx tsc --noEmit      # Check TypeScript errors
@@ -261,10 +268,12 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 
 ## Notes
 
+- **Deployment**: Auto-deploys when pushing to `main` branch on GitHub
 - **WhatsApp Button**: Floating on all pages (bottom-right), configured in `components/layout/WhatsAppButton.tsx`
 - **Forms**: Contact form logs to console - needs backend/email integration for production
 - **SEO**: Each page has metadata, but needs OpenGraph images for social sharing
 - **Images**: Currently using emoji flags - consider SVG flags for better quality
+- **Contact Details**: Using placeholder values - update in `lib/constants.ts` before going live with custom domain
 
 ---
 
