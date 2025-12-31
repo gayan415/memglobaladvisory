@@ -124,32 +124,72 @@ All site content is centralized in `lib/constants.ts`:
 
 ---
 
-## Immediate Next Steps
+## Priority Next Steps
 
-### 1. Update Contact Details (Required)
-Edit `lib/constants.ts`:
+### 1. WhatsApp Integration
+Update the WhatsApp number in `lib/constants.ts`:
 ```typescript
-export const SITE_CONFIG = {
-  // ...
-  phone: "+971-XXX-XXXX",      // ← Replace with actual phone
-  whatsapp: "+971XXXXXXXX",    // ← Replace (no dashes, include country code)
-  address: {
-    full: "Your full address here",
-  },
-};
+whatsapp: "+971XXXXXXXXX",  // ← Replace with actual WhatsApp number (no dashes)
 ```
+- The floating WhatsApp button is already implemented in `components/layout/WhatsAppButton.tsx`
+- Contact page WhatsApp CTA uses this number
+- Format: country code + number, no spaces or dashes (e.g., "+971501234567")
 
-### 2. Add Logo
+### 2. Stripe Payment Integration
+**Status:** Never implemented before - needs full setup
+
+**Steps to implement:**
+1. Create Stripe account at https://stripe.com
+2. Get API keys (publishable + secret) from Stripe Dashboard
+3. Install Stripe: `npm install stripe @stripe/stripe-js @stripe/react-stripe-js`
+4. Create environment variables:
+   ```
+   STRIPE_SECRET_KEY=sk_live_...
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...
+   ```
+5. Build required components:
+   - `/app/api/checkout/route.ts` - API route to create checkout session
+   - `/app/pricing/page.tsx` - Pricing/packages page
+   - `/app/success/page.tsx` - Payment success page
+   - `/app/cancel/page.tsx` - Payment cancelled page
+6. Define service packages with prices
+7. Test with Stripe test keys before going live
+
+**Architecture notes:**
+- React Hook Form + Zod already installed (form validation ready)
+- Can use Stripe Checkout (hosted) or Stripe Elements (embedded)
+- Stripe Checkout is simpler for first implementation
+
+### 3. Domain & Email Setup
+**Domain:**
+- Purchase `memglobaladvisory.com` (Namecheap/Cloudflare/GoDaddy ~$12-15/year)
+- In Vercel: Settings → Domains → Add domain
+- Update DNS records as instructed by Vercel
+- Update `SITE_CONFIG.url` in constants.ts
+
+**Email addresses to set up:**
+- `info@memglobaladvisory.com` - General inquiries
+- `support@memglobaladvisory.com` - Client support
+
+**Email hosting options:**
+1. **Google Workspace** (~$6/user/month) - Professional, reliable
+2. **Zoho Mail** (Free for 5 users) - Good free option
+3. **Cloudflare Email Routing** (Free) - Forward to existing email
+4. **ProtonMail** (~$4/user/month) - Privacy-focused
+
+**Contact form integration:**
+- Once email is set up, integrate with Resend/SendGrid to send form submissions to info@memglobaladvisory.com
+
+---
+
+## Other Next Steps
+
+### Add Logo
 When logo is ready:
 - Add to `public/images/logo.svg`
 - Update `components/layout/Header.tsx` to use Image component
 
-### 3. Set Up Custom Domain
-- Purchase `memglobaladvisory.com` (Namecheap/Cloudflare ~$12/year)
-- In Vercel: Settings → Domains → Add domain
-- Update `SITE_CONFIG.url` in constants.ts
-
-### 4. Set Up Contact Form Backend
+### Set Up Contact Form Backend
 Currently logs to console. Options:
 - **Resend** - Email API (free tier: 100 emails/day)
 - **SendGrid** - Email API
