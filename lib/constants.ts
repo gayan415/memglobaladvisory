@@ -18,7 +18,6 @@ export const SITE_CONFIG = {
   description: "Expert Immigration Advisory from Dubai - We guide individuals, families, students, and professionals through visa, residency, and migration pathways for Europe, Canada, the UK, Australia & New Zealand.",
   url: "https://memglobaladvisory.com",
   email: "info@memglobaladvisory.com",
-  phone: "+971-XXX-XXXX", // Replace with actual phone
   whatsapp: "+971XXXXXXXX", // Replace with actual WhatsApp number (no dashes)
   address: {
     city: "Dubai",

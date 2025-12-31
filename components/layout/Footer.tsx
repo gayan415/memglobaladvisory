@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/ui";
 import { SITE_CONFIG, SERVICES, DESTINATIONS } from "@/lib/constants";
-import { formatPhoneDisplay } from "@/lib/utils";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,13 +20,6 @@ export function Footer() {
                 Expert immigration advisory from Dubai. We guide individuals, families, and professionals through visa and migration pathways with clarity and care.
               </p>
               <div className="space-y-3">
-                <a
-                  href={`tel:${SITE_CONFIG.phone}`}
-                  className="flex items-center text-maroon-200 hover:text-white transition-colors text-sm"
-                >
-                  <Phone className="h-4 w-4 mr-3 flex-shrink-0" />
-                  {formatPhoneDisplay(SITE_CONFIG.phone)}
-                </a>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="flex items-center text-maroon-200 hover:text-white transition-colors text-sm"
