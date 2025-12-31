@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import { Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Container, SectionHeading } from "@/components/ui";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { SITE_CONFIG } from "@/lib/constants";
-import { formatPhoneDisplay, getWhatsAppUrl } from "@/lib/utils";
+import { getWhatsAppUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -70,19 +70,6 @@ export default function ContactPage() {
 
               {/* Contact Details */}
               <div className="bg-white rounded-xl p-6 border border-cream-200 space-y-4">
-                <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-maroon-600 mr-4 mt-0.5" />
-                  <div>
-                    <p className="text-sm text-gray-500">Phone</p>
-                    <a
-                      href={`tel:${SITE_CONFIG.phone}`}
-                      className="font-medium text-maroon-800 hover:text-maroon-600"
-                    >
-                      {formatPhoneDisplay(SITE_CONFIG.phone)}
-                    </a>
-                  </div>
-                </div>
-
                 <div className="flex items-start">
                   <Mail className="h-5 w-5 text-maroon-600 mr-4 mt-0.5" />
                   <div>

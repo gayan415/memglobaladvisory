@@ -20,12 +20,6 @@ export function HeroSection() {
 
       <Container className="relative z-10 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-cream-100 text-sm mb-8 border border-white/20">
-            <span className="mr-2">🏢</span>
-            Dubai-Based Immigration Experts
-          </div>
-
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white font-heading leading-tight mb-6">
             Your Gateway to{" "}

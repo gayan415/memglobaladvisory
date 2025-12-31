@@ -138,7 +138,7 @@ export function ContactForm() {
             "w-full px-4 py-3 rounded-lg border bg-white focus:outline-none focus:ring-2 focus:ring-maroon-500 transition-colors",
             errors.phone ? "border-red-300" : "border-cream-300"
           )}
-          placeholder="+971 XXX XXXX"
+          placeholder="Your phone number"
         />
         {errors.phone && (
           <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>

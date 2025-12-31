@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/ui";
 import { SITE_CONFIG, SERVICES, DESTINATIONS } from "@/lib/constants";
-import { formatPhoneDisplay } from "@/lib/utils";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,20 +13,14 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <h3 className="text-xl font-bold font-heading mb-4">
-                MEM Global Advisory
+              <h3 className="font-heading mb-4">
+                <span className="text-xl font-bold block">MEM Global</span>
+                <span className="text-sm font-medium text-maroon-300">Advisory Partners</span>
               </h3>
               <p className="text-maroon-200 text-sm leading-relaxed mb-6">
                 Expert immigration advisory from Dubai. We guide individuals, families, and professionals through visa and migration pathways with clarity and care.
               </p>
               <div className="space-y-3">
-                <a
-                  href={`tel:${SITE_CONFIG.phone}`}
-                  className="flex items-center text-maroon-200 hover:text-white transition-colors text-sm"
-                >
-                  <Phone className="h-4 w-4 mr-3 flex-shrink-0" />
-                  {formatPhoneDisplay(SITE_CONFIG.phone)}
-                </a>
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="flex items-center text-maroon-200 hover:text-white transition-colors text-sm"

@@ -16,9 +16,12 @@ export function Header() {
       <Container>
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl md:text-2xl font-bold text-maroon-800 font-heading">
+          <Link href="/" className="flex flex-col">
+            <span className="text-xl md:text-2xl font-bold text-maroon-800 font-heading leading-tight">
               MEM Global
+            </span>
+            <span className="text-xs md:text-sm text-maroon-600 font-medium tracking-wide">
+              Advisory Partners
             </span>
           </Link>
 
