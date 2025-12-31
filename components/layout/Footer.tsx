@@ -13,8 +13,9 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-1">
-              <h3 className="text-xl font-bold font-heading mb-4">
-                MEM Global Advisory
+              <h3 className="font-heading mb-4">
+                <span className="text-xl font-bold block">MEM Global</span>
+                <span className="text-sm font-medium text-maroon-300">Advisory Partners</span>
               </h3>
               <p className="text-maroon-200 text-sm leading-relaxed mb-6">
                 Expert immigration advisory from Dubai. We guide individuals, families, and professionals through visa and migration pathways with clarity and care.
