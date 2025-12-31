@@ -126,16 +126,7 @@ All site content is centralized in `lib/constants.ts`:
 
 ## Priority Next Steps
 
-### 1. WhatsApp Integration
-Update the WhatsApp number in `lib/constants.ts`:
-```typescript
-whatsapp: "+971XXXXXXXXX",  // ← Replace with actual WhatsApp number (no dashes)
-```
-- The floating WhatsApp button is already implemented in `components/layout/WhatsAppButton.tsx`
-- Contact page WhatsApp CTA uses this number
-- Format: country code + number, no spaces or dashes (e.g., "+971501234567")
-
-### 2. Stripe Payment Integration
+### 1. Stripe Payment Integration
 **Status:** Never implemented before - needs full setup
 
 **Steps to implement:**
@@ -160,7 +151,7 @@ whatsapp: "+971XXXXXXXXX",  // ← Replace with actual WhatsApp number (no dashe
 - Can use Stripe Checkout (hosted) or Stripe Elements (embedded)
 - Stripe Checkout is simpler for first implementation
 
-### 3. Domain & Email Setup
+### 2. Domain & Email Setup
 **Domain:**
 - Purchase `memglobaladvisory.com` (Namecheap/Cloudflare/GoDaddy ~$12-15/year)
 - In Vercel: Settings → Domains → Add domain
