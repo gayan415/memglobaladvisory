@@ -77,10 +77,10 @@ export default function FAQPage() {
                 Email us your question and we&apos;ll get back to you within 24 hours.
               </p>
               <a
-                href="mailto:info@memglobaladvisory.com"
+                href="mailto:support@memglobaladvisory.com"
                 className="inline-flex items-center text-maroon-700 font-medium hover:text-maroon-800"
               >
-                info@memglobaladvisory.com
+                support@memglobaladvisory.com
               </a>
             </div>
             <div className="bg-white rounded-xl p-6 border border-cream-200 text-center">
