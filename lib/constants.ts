@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
   tagline: "Your Gateway to Global Mobility",
   description: "Expert Immigration Advisory from Dubai - We guide individuals, families, students, and professionals through visa, residency, and migration pathways for Europe, Canada, the UK, Australia & New Zealand.",
   url: "https://memglobaladvisory.com",
-  email: "info@memglobaladvisory.com",
+  email: "support@memglobaladvisory.com",
   whatsapp: "+971523322613",
   address: {
     city: "Dubai",
